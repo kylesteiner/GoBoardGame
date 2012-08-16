@@ -1,0 +1,24 @@
+<h1>Catgories from awear.com</h1>
+<h3><%= link_to "Instructions", instructions_path(@instructions) %></h3>
+
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Url</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @categories.each do |category| %>
+  <tr>
+    <td><%= category.category %></td>
+    <td><a href="<%= category.url %>"><%= category.url %></a></td>
+    <td><%= link_to 'Show', category %></td>
+    <td><%= link_to 'Edit', edit_category_path(category) %></td>
+    <td><%= link_to 'Destroy', category, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
